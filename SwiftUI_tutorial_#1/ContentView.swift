@@ -12,7 +12,6 @@ struct ContentView: View {
     // State 값의 변화를 감지 -> 뷰에 적용
     @State private var menu: Array<String> = crawl()
     @State private var k: Array<String> = crawl()
-    
     // 날짜
     private let dateString :String = "yyyy-MM-dd".stringFromDate()
     private let eeeString : String = "eee요일".stringFromDate()
@@ -32,7 +31,7 @@ struct ContentView: View {
                         VStack{
                             Text("아침")
                                 .font(.system(size: 30))
-                                .padding(20)
+                                .padding(10)
                             Text(menu[0])
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 25))
@@ -57,16 +56,17 @@ struct ContentView: View {
                 })//ScrollView
                     .background(Color.blue)
                     
-                Link(destination: URL(string: "https://domi.seoultech.ac.kr/support/food/?foodtype=sung/")!){
+                Link(destination: URL(string: "https://domi.seoultech.ac.kr/support/food/?foodtype=sung")!){
                     Text("사이트로 이동")
                         .fontWeight(.heavy)
                         .font(.system(size: 20))
-                        .padding()
+                        .padding(10)
                         .background(Color.orange)
                         .foregroundColor(Color.white)
                         .cornerRadius(20)}
                 
             }//VStack
+            .padding(.bottom)
         }//VStack
     }//geometryReader
 }
